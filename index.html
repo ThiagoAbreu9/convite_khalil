@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionário Sarará Sexta</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #question-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        max-width: 500px;
+        text-align: center;
+    }
+    button {
+        background-color: #000FFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        position: relative;
+    }
+    button:hover {
+        background-color: #FF0000;
+    }
+</style>
+</head>
+<body>
+<div id="question-container">
+    <h2>Aniversário Khalil<br><br>Sarará Sexta 03/05/2024<br><br>Confirme sua presença!!!</h2>
+    <button onclick="responder(1)">IREI</button>
+    
+    <button id="botao-nao-quero-ir" onclick="responder(2)">NÃO QUERO IR</button><p id="mensagem-resposta"></p>
+ 
+</div>
+
+<script>
+
+function reposicionarBotao() {
+    var botaoNaoQueroIr = document.getElementById("botao-nao-quero-ir");
+    botaoNaoQueroIr.style.position = "absolute";
+
+    var botaoBora = document.querySelector("button:first-of-type"); // Seleciona o primeiro botão, que é o botão "BORA"
+    var botaoBoraRect = botaoBora.getBoundingClientRect();
+
+    var offsetX = Math.floor(Math.random() * 500) - 300; // Gera um deslocamento aleatório entre -50 e 50 pixels horizontalmente
+    var offsetY = Math.floor(Math.random() * 200) - 200; // Gera um deslocamento aleatório entre -50 e 50 pixels verticalmente
+
+    var novoLeft = botaoBoraRect.left + offsetX;
+    var novoTop = botaoBoraRect.top + offsetY;
+
+    botaoNaoQueroIr.style.left = novoLeft + "px";
+    botaoNaoQueroIr.style.top = novoTop + "px";
+}
+    function responder(opcao) {
+        if (opcao === 1) {
+            window.location.href = "https://imgbox.com/4DUsXUMS";
+        } else if (opcao === 2) {
+            reposicionarBotao(); // Reposiciona o botão ao ser clicado
+        }
+    }
+</script>
+</body>
+</html>
